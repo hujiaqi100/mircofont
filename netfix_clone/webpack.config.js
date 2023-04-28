@@ -6,7 +6,7 @@ module.exports = {
   entry: {
     netfixclone: './src/app.js',
   },
-  mode: 'development',
+  mode: 'production',
   output: {
     filename: 'netfix.[hash].js',
   },

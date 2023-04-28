@@ -19,6 +19,7 @@ const _ = require('lodash')
 // const handler = (percentage, message, ...args) => {
 //     console.info(Math.round(percentage * 100) + '%', message, ...args);
 // };
+const CompressionPlugin = require('compression-webpack-plugin');
 const commonConfig = {
     // entry: {
     //     app: path.resolve(__dirname, '../src/index.js')
@@ -27,45 +28,53 @@ const commonConfig = {
     // devServer: {
     //     hot: true
     // },
-    optimization: {
-        usedExports: true,
-        splitChunks: {
-            chunks: 'all',
-            maxInitialRequests: 10,
-            minSize: 0,
-            cacheGroups: {
-                vendor: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name(module) {
-                        const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
-                        return `vendor.${packageName.replace('@', '')}`;
-                    },
-                    priority: -10,
-                    minChunks: 1,
-                    maxSize: 200000
-                },
-                default: {
-                    minChunks: 2,
-                    priority: -20,
-                    reuseExistingChunk: true
-                }
-                // split: {
-                //     test: function (module, chunk) {
-                //         return module.resource &&
-                //             module.resource.endsWith('.js') &&
-                //             module.resource.includes(`react`);
-                //     },
-                //     priority: -10,
-                //     reuseExistingChunk: true,
-                //     name: 'split',
-                //     enforce: true,
-                //     chunks: 'all',
-                // },
-            }
-        },
-        minimize: false,
-    },
+    // optimization: {
+    //     usedExports: true,
+    //     // splitChunks: {
+    //     //     chunks: 'all',
+    //     //     maxInitialRequests: 10,
+    //     //     // maxSize: 200000,
+    //     //     cacheGroups: {
+    //     //         // vendor: {
+    //     //         //     test: /[\\/]node_modules[\\/]/,
+    //     //         //     name(module) {
+    //     //         //         const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+    //     //         //         return `vendor.${packageName.replace('@', '')}`;
+    //     //         //     },
+    //     //         //     priority: -10,
+    //     //         //     minChunks: 1,
+    //     //         //     maxSize: 200000
+    //     //         // },
+    //     //         // default: {
+    //     //         //     minChunks: 2,
+    //     //         //     priority: -20,
+    //     //         //     reuseExistingChunk: true
+    //     //         // }
+    //     //         // split: {
+    //     //         //     test: function (module, chunk) {
+    //     //         //         return module.resource &&
+    //     //         //             module.resource.endsWith('.js') &&
+    //     //         //             module.resource.includes(`react`);
+    //     //         //     },
+    //     //         //     priority: -10,
+    //     //         //     reuseExistingChunk: true,
+    //     //         //     name: 'split',
+    //     //         //     enforce: true,
+    //     //         //     chunks: 'all',
+    //     //         // },
+    //     //     }
+    //     // },
+    //     minimize: true,
+    // },
     plugins: [
+        new CompressionPlugin({
+            filename: '[path].gz',
+            algorithm: 'gzip',
+            test: /\.js$|\.css$|\.html$|\.ttf$|\.eot$|\.woff$/,
+            threshold: 10240,
+            minRatio: 0.8,
+            deleteOriginalAssets: false
+        }),
         // new AddAssetHtml({
         //     filepath: path.resolve(ROOT, '../dll/vendors.dll.js')
         // }),
@@ -84,12 +93,13 @@ const commonConfig = {
                 netfixClone: "netfixClone@[netfixCloneUrl]/remoteEntry.js",
                 reactClone: "reactClone@[reactCloneUrl]/remoteEntry.js"
             },
-            shared: ['react', 'react-dom', 'vue']
         }),
         new ExternalTemplateRemotesPlugin(),
-        new LodashWebpack(),
-        new webpack.ProgressPlugin(),
-        new NodePolyfillPlugin(),
+
+        // new ExternalTemplateRemotesPlugin(),
+        // new LodashWebpack(),
+        // new webpack.ProgressPlugin(),
+        // new NodePolyfillPlugin(),
         // new webpack.ProvidePlugin({
         //     _: 'lodash'
         // }),
@@ -155,8 +165,11 @@ const commonConfig = {
     }
 }
 module.exports = (env, args) => {
+    const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+    const smp = new SpeedMeasurePlugin();
+
     if (_.get(args, 'mode', '') === 'production') {
-        return webpackMerge(commonConfig, prodConfig)
+        return smp.wrap(webpackMerge(commonConfig, prodConfig))
     } else {
         return webpackMerge(commonConfig, devConfig)
     }

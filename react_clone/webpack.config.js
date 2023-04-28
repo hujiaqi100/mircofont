@@ -6,7 +6,7 @@ module.exports = {
   entry: {
     reactclone: './src/app.js',
   },
-  mode: 'development',
+  mode: 'production',
   output: {
     filename: 'react.[hash].js',
   },

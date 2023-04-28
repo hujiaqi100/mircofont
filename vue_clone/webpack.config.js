@@ -5,42 +5,9 @@ module.exports = {
   entry: {
     main: './src/index.js',
   },
-  mode: 'development',
+  mode: 'production',
   devServer: {
     port: 3002,
-  },
-  optimization: {
-    usedExports: true,
-    splitChunks: {
-      chunks: 'all',
-      maxInitialRequests: 10,
-      minSize: 0,
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name(module) {
-            const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
-            return `vendor.${packageName.replace('@', '')}`;
-          },
-          priority: -10,
-          minChunks: 1,
-          maxSize: 200000
-        },
-        // split: {
-        //     test: function (module, chunk) {
-        //         return module.resource &&
-        //             module.resource.endsWith('.js') &&
-        //             module.resource.includes(`react`);
-        //     },
-        //     priority: -10,
-        //     reuseExistingChunk: true,
-        //     name: 'split',
-        //     enforce: true,
-        //     chunks: 'all',
-        // },
-      }
-    },
-    minimize: false,
   },
   output: {
     filename: '[name].index_bundle.js',

@@ -13,6 +13,8 @@ const fs = require('fs')
 const proxy = require('./middleware/setupProxy.js')
 const routerList = require('./mockData/testData.js')
 process.env.mode = 'production'
+var compress = require('compression');
+app.use(compress());
 app.use('/dqp', express.static('font'))
 const mid = webpackDevMiddleware(complier, {
     publicPath: _config.output.publicPath,

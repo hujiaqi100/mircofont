@@ -5,7 +5,6 @@ import Head from './head-title/index.jsx'
 import Left from './left-tree/index.jsx'
 import { ListenTabs } from './tab/index.jsx'
 import ssrData from './ssrRenderData/App.ssr'
-const NetfixClone = React.lazy(() => import("netfixClone/netfixClone"))
 const App = (props) => {
     const { isPhone } = props
     const [contentWidth, setContentWidth] = useState(!isPhone ? 0 : 290)
