@@ -1,0 +1,50 @@
+@import './theme/theme.less';
+
+html,
+body,
+#app {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  // overflow-x: hidden;
+  background-color: #000000b5;
+  overscroll-behavior: none;
+  color: #fff;
+
+  .ant-spin-dot-spin {
+    color: var(--vicky-active-color) !important;
+    top: 70px;
+  }
+
+
+
+  .ant-btn-sm {
+    background-color: var(--vicky-active-color) !important;
+    border: 0;
+
+    &:hover {
+      color: #fff !important;
+    }
+
+    &:focus {
+      color: #fff !important;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.1px;
+    background-color: #F5F5F5;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #555;
+  }
+
+
+
+}

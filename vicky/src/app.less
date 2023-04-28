@@ -1,0 +1,27 @@
+@import './theme/theme.less';
+
+.layout {
+  overflow: hidden;
+  width: 100%;
+
+  .content-lay {
+    display: flex;
+
+    @media screen and (max-width : 600px) {
+      .left {
+        display: none;
+      }
+
+      .content {
+        width: 100%;
+      }
+    }
+
+    .content {
+      position: relative;
+      height: calc(100vh - 45px);
+      width: 100%;
+     
+    }
+  }
+}

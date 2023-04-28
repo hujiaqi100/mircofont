@@ -1,0 +1,6 @@
+/node_modules
+/testStuff/node_modules
+/vicky/node_modules
+/vueSt/node_modules
+/dist
+/yarn.lock

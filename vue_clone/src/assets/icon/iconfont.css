@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3657015 */
+  /* Color fonts */
+  src: 
+       url('iconfont.woff2?t=1663573291708') format('woff2'),
+       url('iconfont.woff?t=1663573291708') format('woff'),
+       url('iconfont.ttf?t=1663573291708') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-alien:before {
+  content: "\e69b";
+}
+
+.icon-ghost:before {
+  content: "\e69c";
+}
+
+.icon-unicorn:before {
+  content: "\e69d";
+}
+
+.icon-pill:before {
+  content: "\e69e";
+}
+
+.icon-banana:before {
+  content: "\e69f";
+}
+
+.icon-boy:before {
+  content: "\e6a0";
+}
+
+.icon-mushroom:before {
+  content: "\e6a1";
+}
+
+.icon-palette:before {
+  content: "\e6a2";
+}
+
+.icon-eggplant:before {
+  content: "\e6a3";
+}
+
+.icon-strawberry:before {
+  content: "\e6a4";
+}
+
+.icon-watermelon:before {
+  content: "\e6a5";
+}
+
+.icon-carnation:before {
+  content: "\e6a6";
+}
+
+.icon-sakura:before {
+  content: "\e6a7";
+}
+

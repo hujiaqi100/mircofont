@@ -1,0 +1,140 @@
+@import '../theme/theme.less';
+
+.tabs_lay {
+    height: 100%;
+
+    @media screen and (max-width : 900px) {
+        .tempTab {
+            height: calc(100vh - 45px);
+        }
+    }
+
+    .tempTab {
+        width: 100%;
+        height: calc(100vh - 75px);
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    }
+
+    .init_content {
+        position: absolute;
+        border-top: 0.1px solid #ffffff2b;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 36px;
+        font-weight: 700;
+        background: #2e2e2e3d;
+        // background-color: aqua;
+        color: @vicky-active-color;
+
+        @media screen and (max-width : 600px) {
+            pre {
+                font-size: 20px !important;
+            }
+        }
+
+        pre {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 12px;
+            font-size: 14px;
+            white-space: pre-line;
+            overflow: hidden !important;
+
+        }
+    }
+
+    .ant-tabs-nav {
+        margin: 0px !important;
+        height: 30px;
+
+        .ant-tabs-nav-operations {
+            .ant-tabs-nav-more {
+                background: #fff;
+                border-radius: 18px 0px 0px 0px;
+            }
+        }
+    }
+
+    @media screen and (max-width:600px) {
+        .ant-tabs-nav {
+            display: none;
+        }
+
+        .ant-tabs-content-holder {
+            height: calc(100vh - 45px);
+        }
+    }
+
+    .ant-tabs-nav-wrap {
+        background: #2e2e2e;
+        border-top: 0.1px solid #ffffff2b;
+
+        .ant-tabs-nav-list {
+            .ant-tabs-tab {
+                .ant-tabs-tab-btn {
+                    color: #fff;
+                    font-size: 12px;
+                    max-width: 70%;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+
+                &.ant-tabs-tab-with-remove {
+                    background: #000;
+                    border: 0;
+                    // color: #fff;
+                    padding: 6px;
+                    width: 150px;
+                    justify-content: space-between;
+                    margin-left: 0px !important;
+                    padding: 0;
+                    margin: 0;
+                    height: 0px;
+                    width: 130px;
+                    border-bottom: 25px solid #000;
+                    transform: translateY(2px);
+                    // border-right: 30px solid transparent;
+                    background: transparent;
+                    position: relative;
+                    border-radius: 10px 0 0 0;
+                    border-top-right-radius: 100px;
+
+                    .ant-tabs-tab-btn {
+                        position: absolute;
+                        top: 3px;
+                        left: 7px;
+                    }
+
+                    .ant-tabs-tab-remove {
+                        position: absolute;
+                        top: 6px;
+                        position: absolute;
+                        right: 10px;
+                        color: #fff;
+                    }
+
+                    &.ant-tabs-tab-active {
+                        border-bottom: 25px solid @vicky-active-color;
+                        border-top-right-radius: 100px;
+                        transform: translateY(2px);
+                    }
+                }
+            }
+        }
+    }
+
+    .ant-tabs-content-holder {
+        height: calc(100vh - 75px);
+        color: #fff;
+    }
+}

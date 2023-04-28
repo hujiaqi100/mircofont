@@ -1,0 +1,113 @@
+@font-face {
+  font-family: "iconfont";
+  /* Project id 3657015 */
+  /* Color fonts */
+  src:
+    url('iconfont.woff2?t=1681440498626') format('woff2'),
+    url('iconfont.woff?t=1681440498626') format('woff'),
+    url('iconfont.ttf?t=1681440498626') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  /* font-size: 42px; */
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.clover:before {
+  content: "\e62a";
+}
+
+.mushroom:before {
+  content: "\e62b";
+}
+
+.icon-tiaopi:before {
+  content: "\e62c";
+}
+
+.icon-fanu:before {
+  content: "\e62d";
+}
+
+.icon-kun:before {
+  content: "\e62e";
+}
+
+.icon-leiku:before {
+  content: "\e62f";
+}
+
+.icon-kaixin:before {
+  content: "\e630";
+}
+
+.icon-weixiao:before {
+  content: "\e631";
+}
+
+.icon-yiwen:before {
+  content: "\e632";
+}
+
+.icon-juezui:before {
+  content: "\e633";
+}
+
+.icon-jiyan:before {
+  content: "\e634";
+}
+
+.icon-alien:before {
+  content: "\e69b";
+}
+
+.icon-ghost:before {
+  content: "\e69c";
+}
+
+.icon-unicorn:before {
+  content: "\e69d";
+}
+
+.icon-pill:before {
+  content: "\e69e";
+}
+
+.icon-banana:before {
+  content: "\e69f";
+}
+
+.icon-boy:before {
+  content: "\e6a0";
+}
+
+.icon-mushroom:before {
+  content: "\e6a1";
+}
+
+.icon-palette:before {
+  content: "\e6a2";
+}
+
+.icon-eggplant:before {
+  content: "\e6a3";
+}
+
+.icon-strawberry:before {
+  content: "\e6a4";
+}
+
+.icon-watermelon:before {
+  content: "\e6a5";
+}
+
+.icon-carnation:before {
+  content: "\e6a6";
+}
+
+.icon-sakura:before {
+  content: "\e6a7";
+}

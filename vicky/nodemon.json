@@ -1,0 +1,3 @@
+{
+    "ignore": ["server_render/app.cjs.js"]
+}

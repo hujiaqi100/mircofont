@@ -1,0 +1,11 @@
+{
+    "test": {
+        "mushroom": "/aa/cc/mushroom",
+        "clover": "/aa/cc/clover",
+        "test": "/aa/cc/test",
+        "loginTitle": "/loginData"
+    },
+    "test2": {
+        "test": "/aa/cc/test"
+    }
+}

@@ -1,0 +1,31 @@
+@import '../theme/theme.less';
+
+@media screen and (max-width:600px) {
+    .tb {
+        height: calc(100vh - 45px);
+    }
+
+    .spin {
+        height: calc(100vh - 45px);
+    }
+}
+
+.tb {
+    position: relative;
+    z-index: 2;
+    background: #1a1919;
+    color: @vicky-active-color;
+    font-size: 24px;
+    width: 100%;
+    height: calc(100vh - 75px);
+    overflow: auto;
+    overscroll-behavior: none;
+
+    .spin {
+        width: 100%;
+        height: calc(100vh - 75px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
